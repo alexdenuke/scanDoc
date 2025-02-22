@@ -1,0 +1,109 @@
+.header {
+  padding: 25px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  &__acc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    > img {
+      width: 40px;
+      height: 40px;
+    }
+    > button {
+      background: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.5s all;
+      &:hover {
+        color: #007bff;
+        background: none;
+      }
+      > svg {
+        fill: #ffffff;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    > div,
+    > div > div > iframe {
+      width: 100%;
+    }
+    > h1 {
+      margin-bottom: 20px;
+    }
+    > button {
+      border-top: 2px solid #ccc;
+      padding: 5px;
+      border-bottom: 2px solid #ccc;
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  &__profile {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding-top: 40px;
+    &_info {
+      padding-bottom: 20px;
+      border-bottom: 1px solid;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      > img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+      }
+    }
+    &_leave {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      > p > svg {
+        cursor: pointer;
+        fill: #000;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 422px) {
+  .header {
+    &__profile {
+      &_info {
+        flex-direction: column;
+      }
+      &_leave {
+        > p {
+          display: flex;
+          flex-direction: column;
+          > svg {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

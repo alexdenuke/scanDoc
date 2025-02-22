@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 40px 0px;
+}
+.header__logo {
+    font-size: 30px;
+    margin-right: auto;
+    font-family: "Gropled";
+
+    &:visited {
+        color: $corporate-color;
+    }
+}
+
+.header__navLink {
+    margin-left: 25px;
+}
+
+.header__account {
+    padding: 5px 10px;
+    background-color: $corporate-color;
+    border-radius: 10px;
+    color: white;
+    margin-left: 50px;
+}
+
+.header__account:visited {
+    color: white;
+}
+

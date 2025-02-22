@@ -1,0 +1,177 @@
+.actions {
+  max-width: 300px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: var(--white);
+  padding: 40px;
+  box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &:nth-child(1) {
+        svg {
+          stroke: #c7c7c7;
+        }
+
+        span {
+          color: #c7c7c7;
+        }
+      }
+
+      &:nth-child(2) {
+        svg {
+          fill: #c7c7c7;
+        }
+
+        span {
+          color: #c7c7c7;
+        }
+      }
+
+      &:nth-child(3) {
+        svg {
+          fill: #c7c7c7;
+        }
+
+        span {
+          color: #c7c7c7;
+        }
+      }
+
+      &:nth-child(4) {
+        svg {
+          fill: #c7c7c7;
+        }
+
+        span {
+          color: #c7c7c7;
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        color: var(--dark);
+      }
+    }
+  }
+
+  &__button:nth-child(1) {
+    svg {
+      stroke: var(--dark);
+    }
+  }
+
+  &__button:nth-child(2) {
+    svg {
+      fill: var(--red);
+    }
+
+    span {
+      color: var(--red);
+    }
+  }
+
+  &__button:nth-child(3) {
+    svg {
+      fill: var(--dark);
+    }
+  }
+
+  &__button:nth-child(4) {
+    svg {
+      fill: var(--dark);
+    }
+  }
+
+  &__export {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+
+    &Text {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    &Buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &Button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 18px;
+      background: var(--primary-color);
+      border-radius: 4px;
+
+      span {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        color: var(--white);
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--white);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .actions {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: max-content;
+    padding: 20px;
+    &__content,
+    &__export {
+      display: none;
+    }
+    > button {
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 100%;
+      > svg {
+        stroke: #fff;
+      }
+    }
+  }
+}

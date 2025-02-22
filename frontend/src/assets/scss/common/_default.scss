@@ -1,0 +1,63 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   outline: none;
+//   background: none;
+//   border: none;
+//   box-sizing: border-box;
+//   font-size: inherit;
+//   font-style: inherit;
+//   font-family: inherit;
+// }
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+// body {
+//   font-family: "Open-Sans", sans-serif;
+//   background: var(--gray);
+//   overflow-x: hidden;
+
+//   &::-webkit-scrollbar {
+//     width: 0.25rem;
+//     height: 0.25rem;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     width: 0.25rem;
+//     background: var(--primary-color);
+//     border-radius: 0.25rem
+//   }
+// }
+
+// a {
+//   text-decoration: none;
+//   white-space: nowrap;
+// }
+
+// button {
+//   cursor: pointer;
+//   white-space: nowrap;
+// }
+
+// .container {
+//   max-width: 1870px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+// }
+
+// .backdrop__active {
+//   width: 100% !important;
+//   min-height: 100vh !important;
+//   opacity: 1 !important;
+//   top: 0 !important;
+//   left: 0 !important;
+//   transform: translate(0, 0) !important;
+// }
+
+// .modal__active {
+//   visibility: visible !important;
+//   transform: scale(1) !important;
+// }

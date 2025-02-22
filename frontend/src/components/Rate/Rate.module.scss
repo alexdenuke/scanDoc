@@ -1,0 +1,31 @@
+.title {
+    font-size: 60px;
+    font-family: var(--font-gropled);
+    margin-top: 50px;
+}
+
+.subtitle {
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.selectWrap {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.select {
+}
+
+.selectInfo {
+    margin-top: 20px;
+    font-family: var(--font-gropled);
+    font-size: 30px;
+}
+
+.selectPrice {
+    margin-top: 10px;
+    font-size: 20px;
+    color: black;
+}

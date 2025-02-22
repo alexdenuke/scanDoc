@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.justifyStart {
+    justify-content: start;
+}
+.justifyCenter {
+    justify-content: center;
+}
+.btnWrap {
+    display: flex;
+}
+.btn {
+    background-color: $corporate-color;
+    color: white;
+    font-weight: bold;
+    // display: flex;
+    // align-items: center;
+    // top: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 30px 10px;
+    width: max-content;
+    position: relative;
+
+    &::after {
+        content: "";
+        // display: inline-block;
+        position: absolute;
+        top: 13px;
+        width: 24px;
+        height: 24px;
+        background-image: url("/icons/arrow.svg");
+        background-repeat: no-repeat;
+    }
+}

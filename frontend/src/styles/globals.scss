@@ -1,0 +1,17 @@
+@import "./variables";
+@import "./reset";
+
+body {
+  color: $corporate-color;
+  font-family: var(--font-open-sans), sans-serif;
+}
+a:visited {
+  color: $corporate-color;
+}
+
+.container {
+    max-width: 1240px;  
+    margin: 0 auto;     
+    padding: 0 20px;    
+    width: 100%;        
+  }

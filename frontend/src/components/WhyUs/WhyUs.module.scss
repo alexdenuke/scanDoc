@@ -1,0 +1,28 @@
+.whyUs {
+    background: url("/img/whyUs.jpg") no-repeat;
+}
+
+.title {
+    font-size: 60px;
+    font-family: var(--font-gropled);
+}
+
+.advantagesWrap {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+}
+
+.printIcon{
+    margin-left: auto;
+}
+
+.advantageItem {
+    background-color: #CDD6E5;
+    margin-bottom: 30px;
+    padding: 15px 30px;
+    border-radius: 22px;
+    font-size: 18px;
+    width: max-content;
+}

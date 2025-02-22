@@ -1,0 +1,124 @@
+.actions {
+  &__export {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    gap: 5px;
+    padding: 20px;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 100px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    animation: slideIn 0.5s forwards;
+    &Text {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    &Buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &Button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 18px;
+      background: var(--primary-color);
+      border-radius: 4px;
+
+      span {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        color: var(--white);
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--white);
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+  }
+
+  &__button:nth-child(1) {
+    svg {
+      stroke: var(--dark);
+    }
+  }
+
+  &__button:nth-child(2) {
+    svg {
+      fill: var(--red);
+    }
+
+    span {
+      color: var(--red);
+    }
+  }
+
+  &__button:nth-child(3) {
+    svg {
+      fill: var(--dark);
+    }
+  }
+
+  &__button:nth-child(4) {
+    svg {
+      fill: var(--dark);
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-100%, -100%);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .actions {
+    &__export {
+      display: flex;
+    }
+  }
+}

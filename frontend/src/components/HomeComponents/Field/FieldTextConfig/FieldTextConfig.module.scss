@@ -1,0 +1,69 @@
+.config {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &Content {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &Button {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--dark);
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 400;
+      color: var(--dark);
+
+      &:nth-child(1) {
+        font-weight: 700;
+      }
+
+      &:nth-child(2) {
+        font-style: italic;
+      }
+    }
+
+    label {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    select {
+      padding: 5px 10px;
+      border: 1px solid var(--dark-gray);
+      border-radius: 4px;
+
+      option {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .config {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
