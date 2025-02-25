@@ -4,8 +4,10 @@ import Image from "next/image";
 export default function Example() {
     return (
         <section className={style.example}>
+            <div className="container">
+                <h2 className="title text-center">Примеры документов</h2>
+            </div>
 
-            <h2 className={style.title}>Примеры документов</h2>
             <div className={style.imgWrap}>
                 <Image className={style.img} src="/img/doc1.png"
                     width={205}

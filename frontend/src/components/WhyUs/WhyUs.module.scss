@@ -1,21 +1,50 @@
 .whyUs {
     background: url("/img/whyUs.jpg") no-repeat;
+
+    @media (max-width: 768px) {
+        background: url("/img/whyUsAdaptive.jpg") no-repeat;
+    }
 }
 
-.title {
-    font-size: 60px;
-    font-family: var(--font-gropled);
-}
+
 
 .advantagesWrap {
     display: flex;
     flex-direction: column;
     width: 60%;
     margin-left: auto;
+
+    @media (max-width: 1160px) {
+        flex-direction: row;
+        // margin-left: 0px;
+        justify-content: end;
+        width: 100%;
+    }
 }
 
-.printIcon{
+.printIcon {
     margin-left: auto;
+
+    @media (max-width: 1160px) {
+        display: none;
+    }
+}
+
+.box {
+    width: 400px;
+    // height: 100px;
+}
+
+.advantageItemsWrap {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1150px) {
+        // align-items: end;
+        // flex-basis: 50%;
+        // justify-content: end;
+        align-items: end;
+    }
 }
 
 .advantageItem {
@@ -25,4 +54,15 @@
     border-radius: 22px;
     font-size: 18px;
     width: max-content;
+
+    @media (max-width: 1150px) {
+        text-align: end;
+        width: inherit;
+
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
 }

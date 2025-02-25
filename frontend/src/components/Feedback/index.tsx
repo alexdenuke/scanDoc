@@ -6,13 +6,18 @@ export default function Feedback() {
         <section className={style.feedback}>
             <div className={style.flex}>
                 <div className={style.titleWrap}>
-                    <h2 className={style.title}>Захотели выкинуть принтеры из офиса и приобрести подписку для своих сотрудников?</h2>
-                    <h3 className={style.subtitle}>Оставьте заявку и мы посчитаем для Вас индивидуальный тариф, а также возможность оплаты по счету</h3>
+                    <h2 className="title">Захотели выкинуть принтеры из офиса и приобрести подписку для своих сотрудников?</h2>
+                    <h3 className="subtitle">Оставьте заявку и мы посчитаем для Вас индивидуальный тариф, а также возможность оплаты по счету</h3>
                 </div>
-                <Image src="/img/feedback.png"
+                <Image className={style.feedbackImg} src="/img/feedback.png"
                     width={337}
                     height={232}
                     alt="Picture of the author" />
+
+                {/* <Image className={style.feedbackImgAdaptive} src="/img/feedback-adaptive.png"
+                    width={337}
+                    height={232}
+                    alt="Picture of the author" /> */}
             </div>
             <form className={style.form} action="">
                 <input className={style.input} type="text" placeholder="Имя" />

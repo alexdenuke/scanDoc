@@ -17,10 +17,10 @@ export default function Home() {
         <Header />
         <Hero />
         <HowItWorks />
-        <section className={style.fastAndSafe}>
+        {/* <section className={style.fastAndSafe}>
           <h2 className={style.title}>Быстро и безопасно</h2>
           <BtnWithArrow justify="center" label="Загрузить документ" />
-        </section>
+        </section> */}
         <WhyUs />
       </div>
       <Example />

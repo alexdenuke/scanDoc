@@ -3,15 +3,32 @@
 .header {
     display: flex;
     align-items: center;
-    padding: 40px 0px;
+    padding: 40px 0px 0px 0px;
+
+    // @media (max-width: 1160px) {
+
+    // }
 }
+
 .header__logo {
     font-size: 30px;
     margin-right: auto;
     font-family: "Gropled";
+    flex: 0 1 auto;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 
     &:visited {
         color: $corporate-color;
+    }
+}
+
+.header__nav {
+
+    @media (max-width: 1160px) {
+        display: none;
     }
 }
 
@@ -25,9 +42,26 @@
     border-radius: 10px;
     color: white;
     margin-left: 50px;
+
+    @media (max-width: 1160px) {
+        display: none;
+    }
 }
 
 .header__account:visited {
     color: white;
 }
 
+.burger {
+    height: 30px;
+    display: none;
+    width: max-content;
+
+    @media (max-width: 1160px) {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        height: 24px;
+    }
+}

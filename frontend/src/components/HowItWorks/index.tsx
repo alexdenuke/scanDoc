@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function HowItWorks() {
     return (
         <>
-            <h2 className={style.title}>Всего 3 клика</h2>
+            <h2 className="title">Всего 3 клика</h2>
             <div className={style.stepWrap}>
                 <div className={style.step}>
                     <Image className={style.number} src="/img/stepOne.png"
@@ -17,7 +17,7 @@ export default function HowItWorks() {
 
                 </div>
                 <div className={style.step}>
-                <Image className={style.number} src="/img/stepTwo.png"
+                    <Image className={style.number} src="/img/stepTwo.png"
                         width={130}
                         height={200}
                         alt="Picture of the author" />
@@ -28,7 +28,7 @@ export default function HowItWorks() {
 
                 </div>
                 <div className={style.step}>
-                <Image className={style.number} src="/img/stepThree.png"
+                    <Image className={style.number} src="/img/stepThree.png"
                         width={130}
                         height={200}
                         alt="Picture of the author" />

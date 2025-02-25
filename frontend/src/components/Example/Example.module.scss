@@ -6,12 +6,6 @@
     padding-bottom: 50px;
 }
 
-.title {
-    font-size: 60px;
-    margin-bottom: 50px;
-    font-family: var(--font-gropled);
-    text-align: center;
-}
 
 
 .imgWrap {
@@ -21,5 +15,9 @@
 }
 
 .img {
-    // height: 700px;
+    margin-left: 20px;
+
+    &:last-child {
+        margin-right: 20px;
+    }
 }
