@@ -33,7 +33,7 @@ interface ApiAuthResponse {
   expiresIn: number;
 }
 
-export default function Header() {
+export default function Header2() {
   const [show, setShow] = useState<boolean>(false);
   const [user, setUser] = useState<User | undefined>(undefined);
 
@@ -137,65 +137,64 @@ export default function Header() {
   };
 
   return (
-    <></>
-    // <header className={st.header}>
-    //   <h1>Редактор</h1>
-    //   <div className={st.header__acc}>
-    //     {Cookies.get("token") && (
-    //       <img
-    //         src={
-    //           user?.ava ??
-    //           "https://cdn-icons-png.flaticon.com/512/149/149071.png"
-    //         }
-    //         alt="Аватар"
-    //         onClick={() => setShow(true)}
-    //       />
-    //     )}
-    //   </div>
-    //   <Modal
-    //     isOpen={show}
-    //     onClose={() => {
-    //       if (Cookies.get("token")) {
-    //         setShow(false);
-    //       } else {
-    //         setShow(true);
-    //       }
-    //     }}
-    //   >
-    //     {!Cookies.get("token") ? (
-    //       <div className={st.header__social}>
-    //         <h1>Войдите в аккаунт</h1>
-    //         <Suspense fallback={<p>Загрузка...</p>}>
-    //           <Login />
-    //           <YandexAuthButton />
-    //           <AuthWidget />
-    //         </Suspense>
-    //       </div>
-    //     ) : (
-    //       <div className={st.header__profile}>
-    //         <div className={st.header__profile_info}>
-    //           <img
-    //             src={
-    //               user?.ava ??
-    //               "https://cdn-icons-png.flaticon.com/512/149/149071.png"
-    //             }
-    //             alt="Аватар"
-    //           />
-    //           <h4>
-    //             {user?.first_name} {user?.last_name}
-    //           </h4>
-    //         </div>
-    //         <div className={st.header__profile_leave}>
-    //           <p>
-    //             <strong>Email:</strong> {user?.email}
-    //           </p>
-    //           <p onClick={clearAllCookies}>
-    //             <LeaveIcon />
-    //           </p>
-    //         </div>
-    //       </div>
-    //     )}
-    //   </Modal>
-    // </header>
+    <header className={st.header}>
+      <h1>Редактор</h1>
+      <div className={st.header__acc}>
+        {Cookies.get("token") && (
+          <img
+            src={
+              user?.ava ??
+              "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            }
+            alt="Аватар"
+            onClick={() => setShow(true)}
+          />
+        )}
+      </div>
+      <Modal
+        isOpen={show}
+        onClose={() => {
+          if (Cookies.get("token")) {
+            setShow(false);
+          } else {
+            setShow(true);
+          }
+        }}
+      >
+        {!Cookies.get("token") ? (
+          <div className={st.header__social}>
+            <h1>Войдите в аккаунт</h1>
+            <Suspense fallback={<p>Загрузка...</p>}>
+              <Login />
+              <YandexAuthButton />
+              <AuthWidget />
+            </Suspense>
+          </div>
+        ) : (
+          <div className={st.header__profile}>
+            <div className={st.header__profile_info}>
+              <img
+                src={
+                  user?.ava ??
+                  "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                }
+                alt="Аватар"
+              />
+              <h4>
+                {user?.first_name} {user?.last_name}
+              </h4>
+            </div>
+            <div className={st.header__profile_leave}>
+              <p>
+                <strong>Email:</strong> {user?.email}
+              </p>
+              <p onClick={clearAllCookies}>
+                <LeaveIcon />
+              </p>
+            </div>
+          </div>
+        )}
+      </Modal>
+    </header>
   );
 }

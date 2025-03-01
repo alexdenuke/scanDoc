@@ -10,7 +10,7 @@ import {
   useCallback,
 } from "react";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
-import { Page, PlacedSignature, PlacedText } from "../index";
+import { Page, PlacedSignature, PlacedText } from "..";
 import { AddPageIcon, RotateIcon } from "@/components/Icons/Icons";
 import Cookies from "js-cookie";
 import ky from "ky";
@@ -288,9 +288,9 @@ const Field: React.FC<FieldProps> = ({
       fileType === "application/msword" ||
       fileType === "application/vnd.ms-excel" ||
       fileType ===
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
       fileType ===
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     ) {
       const uploadedPath = await uploadFile(file);
       const pdfUrl = await convertToPdf(uploadedPath, fileType);
@@ -465,9 +465,9 @@ const Field: React.FC<FieldProps> = ({
 
       const inSERes =
         localX >= ps.width - handleSize &&
-        localX <= ps.width + handleSize &&
-        localY >= ps.height - handleSize &&
-        localY <= ps.height + handleSize
+          localX <= ps.width + handleSize &&
+          localY >= ps.height - handleSize &&
+          localY <= ps.height + handleSize
           ? "se"
           : null;
 
@@ -498,9 +498,9 @@ const Field: React.FC<FieldProps> = ({
       const handleSize = 5;
       const inSEResT =
         localX >= t.width - handleSize &&
-        localX <= t.width + handleSize &&
-        localY >= t.height - handleSize &&
-        localY <= t.height + handleSize
+          localX <= t.width + handleSize &&
+          localY >= t.height - handleSize &&
+          localY <= t.height + handleSize
           ? "se"
           : null;
 

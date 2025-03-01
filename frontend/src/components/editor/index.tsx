@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import styles from "./HomeComponents.module.scss";
+import styles from "./Editor.module.scss";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import JSZip from "jszip";
@@ -60,7 +60,7 @@ export interface PlacedText {
 
 const CONTAINER_HEIGHT = 300;
 
-const HomeComponents: React.FC = () => {
+const Editor: React.FC = () => {
   const id_user = Cookies.get("id_user");
   const token = Cookies.get("token");
   const [pages, setPages] = useState<Page[]>([]);
@@ -1728,4 +1728,4 @@ const HomeComponents: React.FC = () => {
   );
 };
 
-export default HomeComponents;
+export default Editor;

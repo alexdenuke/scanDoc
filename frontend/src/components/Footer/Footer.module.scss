@@ -29,6 +29,10 @@
     margin-bottom: 10px;
     margin-right: auto;
     font-family: var(--font-gropled);
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 .nav {
@@ -48,6 +52,10 @@
 
     @media (max-width: 1024px) {
         margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
     }
 
     &:visited {
@@ -73,6 +81,10 @@
 
     @media (max-width: 1024px) {
         display: block;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
     }
 }
 

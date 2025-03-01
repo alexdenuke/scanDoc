@@ -1,4 +1,4 @@
-import HomeComponents from "@/components/HomeComponents";
+import HomeComponents from "@/components/editor";
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import BtnWithArrow from "@/components/BtnWithArrow";

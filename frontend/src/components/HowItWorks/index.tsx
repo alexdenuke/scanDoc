@@ -6,7 +6,7 @@ export default function HowItWorks() {
             <h2 className="title">Всего 3 клика</h2>
             <div className={style.stepWrap}>
                 <div className={style.step}>
-                    <Image className={style.number} src="/img/stepOne.png"
+                    <Image className={style.number1} src="/img/stepOne.png"
                         width={50}
                         height={200}
                         alt="Picture of the author" />
@@ -17,7 +17,7 @@ export default function HowItWorks() {
 
                 </div>
                 <div className={style.step}>
-                    <Image className={style.number} src="/img/stepTwo.png"
+                    <Image className={style.number2} src="/img/stepTwo.png"
                         width={130}
                         height={200}
                         alt="Picture of the author" />
@@ -28,7 +28,7 @@ export default function HowItWorks() {
 
                 </div>
                 <div className={style.step}>
-                    <Image className={style.number} src="/img/stepThree.png"
+                    <Image className={style.number3} src="/img/stepThree.png"
                         width={130}
                         height={200}
                         alt="Picture of the author" />

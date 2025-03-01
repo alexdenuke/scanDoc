@@ -3,7 +3,7 @@ import style from "./WhyUs.module.scss";
 export default function WhyUs() {
     return (
         <section className={style.whyUs}>
-            <h2 className="title">Почему нас выбирают</h2>
+            <h2 className={`title ${style.title}`}>Почему нас выбирают</h2>
             <div className={style.advantagesWrap}>
                 <img className={style.printIcon} src="/img/whyUsPrint.png" alt="Иконка" />
                 <div className={style.box}></div>

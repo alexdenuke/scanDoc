@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../assets/scss/style.scss";
-// import Header from "@/components/Header-old";
 import Script from "next/script";
 import Head from "next/head";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -41,6 +40,7 @@ export default function RootLayout({
       <body>
         <GoogleOAuthProvider clientId="195463120030-60ebjae1ek2bjav8jas007gbqsmfha7k.apps.googleusercontent.com">
           {/* <Header /> */}
+          {/* <Header2 /> */}
           <Head>
             <script
               src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"
