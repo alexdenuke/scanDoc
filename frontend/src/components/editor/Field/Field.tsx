@@ -14,6 +14,7 @@ import { Page, PlacedSignature, PlacedText } from "..";
 import { AddPageIcon, RotateIcon } from "@/components/Icons/Icons";
 import Cookies from "js-cookie";
 import ky from "ky";
+import Image from "next/image";
 
 GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
@@ -1205,11 +1206,17 @@ const Field: React.FC<FieldProps> = ({
             onClick={() => fileInputRef.current?.click()}
             style={{ cursor: "pointer" }}
           >
-            <AddPageIcon />
+            {/* <AddPageIcon /> */}
+            <Image
+              src="/icons/addDocument.svg"
+              alt="add page"
+              width={140}
+              height={181}
+            />
             <div className={styles.field__info}>
               <div className={styles.field__infoText}>
-                <h4>Загрузить документы</h4>
-                <p>Можете их загрузить кликнув на поле для выбора файла</p>
+                <h4 className={styles.field__infoTitle}>Загрузите документ</h4>
+                <p>Можно перетащить их в это поле</p>
               </div>
               <p className={styles.field__infoFormats}>
                 JPG, JPEG, PNG, PDF, DOCX, DOC, XLS, XLSX

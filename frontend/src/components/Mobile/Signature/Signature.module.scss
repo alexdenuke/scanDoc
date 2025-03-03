@@ -3,9 +3,13 @@
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  flex-direction: column;
   gap: 30px;
   background: #fff;
+
+  &__icon {
+    margin-right: auto;
+  }
+
   &__actions {
     display: flex;
     align-items: flex-start;
@@ -127,13 +131,15 @@
 @media screen and (max-width: 1024px) {
   .signature {
     display: flex;
+
     &__actions {
-      > button > span {
+      >button>span {
         display: none;
       }
     }
   }
 }
+
 // @media screen and (max-width: 768px) {
 //   .signature {
 //     gap: 10px;

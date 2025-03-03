@@ -11,6 +11,8 @@ import Signature from "./Signature/Signature";
 import Field from "./Field/Field";
 import Actions from "./Actions/Actions";
 import Modal from "@/shared/Modals/Modals";
+import Link from "next/link";
+import Image from "next/image";
 
 export interface Page {
   id: string;
@@ -1438,6 +1440,28 @@ const Editor: React.FC = () => {
 
   return (
     <>
+      <header className={styles.header}>
+        <div className={styles.headerWrap}>
+          <Link className={styles.logo} href="/" >ПодписьОнлайн</Link>
+          <Link className={styles.header__user} href="/" >пользователь</Link>
+          <Image
+            src="/icons/userIcon.svg"
+            alt="logo"
+            width={24}
+            height={25}
+            className={styles.userIcon}
+          />
+          <Image
+            src="/icons/log-out.svg"
+            alt="logo"
+            width={30}
+            height={30}
+            className={styles.userIcon}
+          />
+
+        </div>
+
+      </header>
       <input
         type="file"
         style={{ display: "none" }}

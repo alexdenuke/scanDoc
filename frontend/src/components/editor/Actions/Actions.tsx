@@ -10,6 +10,7 @@ import {
 import styles from "./Actions.module.scss";
 import ActionsMobile from "@/components/Mobile/Actions/Index";
 import DownlaodMobile from "@/components/Mobile/Download/Index";
+import Image from "next/image";
 
 interface ActionsProps {
   onDeleteDocument: () => void;
@@ -35,111 +36,147 @@ const Actions: React.FC<ActionsProps> = ({
   const [showActions, setShowActions] = useState<boolean>(false);
   const [showDownload, setShowDownload] = useState<boolean>(false);
   return (
-    <div className={styles.actions}>
-      <button onClick={() => setShowActions(!showActions)}>
-        <MoreIcon />
-      </button>
-      <button onClick={() => setShowDownload(!showDownload)}>
-        <DownloadIcon />
-      </button>
-      {showActions && (
-        <ActionsMobile
-          onDeleteDocument={onDeleteDocument}
-          onUndo={onUndo}
-          onRotate={onRotate}
-          onApplyToAll={onApplyToAll}
-          isDocumentLoaded={isDocumentLoaded}
-        />
-      )}
-      {showDownload && (
-        <DownlaodMobile onExportJPG={onExportJPG} onExportPDF={onExportPDF} />
-      )}
-      <div className={styles.actions__content}>
-        <button
-          className={styles.actions__button}
-          onClick={onDeleteDocument}
-          disabled={!isDocumentLoaded}
-          title={
-            !isDocumentLoaded
-              ? "Загрузите документ для удаления"
-              : "Удалить документ"
-          }
-        >
-          <TrashIcon />
-          <span>Удалить документ</span>
-        </button>
-        <button
-          className={styles.actions__button}
-          onClick={onUndo}
-          disabled={!isDocumentLoaded}
-          title={
-            !isDocumentLoaded ? "Загрузите документ для отмены" : "Отменить"
-          }
-        >
-          <CancelIcon />
-          <span>Отменить</span>
-        </button>
-        <button
-          className={styles.actions__button}
-          onClick={onRotate}
-          disabled={!isDocumentLoaded}
-          title={
-            !isDocumentLoaded
-              ? "Загрузите документ для поворота"
-              : "Повернуть страницу"
-          }
-        >
-          <RotatePageIcon />
-          <span>Повернуть страницу</span>
-        </button>
-        <button
-          className={styles.actions__button}
-          onClick={onApplyToAll}
-          disabled={!isDocumentLoaded || !isApplyAllEnabled} 
-          title={
-            !isDocumentLoaded
-              ? "Загрузите документ для применения"
-              : !isApplyAllEnabled
-              ? "Выберите элемент для применения"
-              : "Применить на все страницы"
-          }
-        >
-          <AllPagesIcon />
-          <span>Применить на все страницы</span>
-        </button>
+
+    <>
+      <div className={styles.adaptive}>
+        <Image src="/icons/adaptivePlus.svg" alt="Удалить документ" width={31} height={31} />
+        <Image src="/icons/adaptiveArrowLeft.svg" alt="Удалить документ" width={31} height={31} />
+        <p>1/20</p>
+        <Image src="/icons/adaptiveArrowRight.svg" alt="Удалить документ" width={31} height={31} />
+        <Image src="/icons/adaptiveDownload.svg" alt="Удалить документ" width={31} height={31} />
+
       </div>
-      <div className={styles.actions__export}>
-        <span className={styles.actions__exportText}>Экспортировать в:</span>
-        <div className={styles.actions__exportButtons}>
+      <div className={styles.actions}>
+        {showActions && (
+          <ActionsMobile
+            onDeleteDocument={onDeleteDocument}
+            onUndo={onUndo}
+            onRotate={onRotate}
+            onApplyToAll={onApplyToAll}
+            isDocumentLoaded={isDocumentLoaded}
+          />
+        )}
+        {showDownload && (
+          <DownlaodMobile onExportJPG={onExportJPG} onExportPDF={onExportPDF} />
+        )}
+        <div className={styles.actions__content}>
           <button
-            className={styles.actions__exportButton}
+            className={styles.actions__button}
+            onClick={onDeleteDocument}
             disabled={!isDocumentLoaded}
             title={
               !isDocumentLoaded
-                ? "Загрузите документ для экспорта"
-                : "Экспортировать в JPG"
+                ? "Загрузите документ для удаления"
+                : "Удалить документ"
             }
-            onClick={onExportJPG}
           >
-            <DownloadIcon />
-            <span>JPG</span>
+            <Image src="/icons/trashIcon.svg" alt="Удалить документ" width={22} height={22} />
+            <span>Удалить документ</span>
           </button>
           <button
-            className={styles.actions__exportButton}
+            className={styles.actions__button}
+            onClick={onUndo}
+            disabled={!isDocumentLoaded}
+            title={
+              !isDocumentLoaded ? "Загрузите документ для отмены" : "Отменить"
+            }
+          >
+            <Image src="/icons/cancelIcon.svg" alt="Отменить" width={22} height={22} />
+            <span>Отменить</span>
+          </button>
+          <button
+            className={styles.actions__button}
+            onClick={onRotate}
             disabled={!isDocumentLoaded}
             title={
               !isDocumentLoaded
-                ? "Загрузите документ для экспорта"
-                : "Экспортировать в PDF"
+                ? "Загрузите документ для поворота"
+                : "Повернуть страницу"
             }
-            onClick={onExportPDF}
           >
-            <DownloadIcon />
-            <span>PDF</span>
+            <Image src="/icons/rotateIcon.svg" alt="Повернуть страницу" width={22} height={22} />
+            <span>Повернуть страницу</span>
+          </button>
+          <button
+            className={styles.actions__button}
+            onClick={onApplyToAll}
+            disabled={!isDocumentLoaded || !isApplyAllEnabled}
+            title={
+              !isDocumentLoaded
+                ? "Загрузите документ для применения"
+                : !isApplyAllEnabled
+                  ? "Выберите элемент для применения"
+                  : "Применить на все страницы"
+            }
+          >
+            <Image src="/icons/documentsIcon.svg" alt="Применить на все страницы" width={22} height={22} />
+            <span>На все страницы</span>
           </button>
         </div>
+
+        <div className={styles.actions__export}>
+          <span className={styles.actions__exportText}>Скачать бесплатно:</span>
+          <div className={styles.actions__exportButtons}>
+            <button
+              className={styles.actions__downloadButton}
+              disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта!!"
+                  : "Экспортировать в JPG!"
+              }
+              onClick={onExportJPG}
+            >
+              <Image className="actions__downloadIcon" src="/icons/download.svg" alt="logo" width={15} height={15} />
+              <span className={styles.actions__downloadText}>JPG</span>
+            </button>
+            <button
+              className={styles.actions__downloadButton}
+              disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта!!"
+                  : "Экспортировать в JPG!"
+              }
+              onClick={onExportJPG}
+            >
+              <Image className="actions__downloadIcon" src="/icons/download.svg" alt="logo" width={15} height={15} />
+              <span className={styles.actions__downloadText}>PDF</span>
+            </button>
+          </div>
+          <span className={styles.actions__exportText}>Купить:</span>
+          <div className={styles.actions__exportButtons}>
+            <button
+              className={styles.actions__exportButton}
+              disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта!!"
+                  : "Экспортировать в JPG!"
+              }
+              onClick={onExportJPG}
+            >
+              <DownloadIcon />
+              <span>JPG</span>
+            </button>
+            <button
+              className={styles.actions__exportButton}
+              disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта"
+                  : "Экспортировать в PDF"
+              }
+              onClick={onExportPDF}
+            >
+              <DownloadIcon />
+              <span>PDF</span>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
+
   );
 };
 

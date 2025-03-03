@@ -1,5 +1,6 @@
 import { TextIcon, UploadIcon } from "@/components/Icons/Icons";
 import styles from "./Signature.module.scss";
+import Image from "next/image";
 
 interface SignatureProps {
   callSignatureModal: () => void;
@@ -22,20 +23,20 @@ const SignatureMobile = ({
 }: SignatureProps) => {
   return (
     <div className={styles.signature}>
-      <div className={styles.signature__actions}>
+      <Image className={styles.signature__icon} src="/icons/adaptiveMenu.svg" alt="Подпись" width={32} height={32} />
+      <Image src="/icons/userIcon.svg" alt="Подпись" width={32} height={32} />
+      {/* <div className={styles.signature__actions}>
         <button className={styles.signature__button} onClick={onAddText}>
-          <TextIcon />
           <span>Добавить текст</span>
         </button>
         <button
           className={styles.signature__button}
           onClick={callSignatureModal}
         >
-          <UploadIcon />
           <span>Загрузить подпись</span>
         </button>
-      </div>
-      <ul className={styles.signature__list}>
+      </div> */}
+      {/* <ul className={styles.signature__list}>
         {isLoading ? (
           <li>Загрузка...</li>
         ) : (
@@ -58,7 +59,7 @@ const SignatureMobile = ({
             </li>
           ))
         )}
-      </ul>
+      </ul> */}
     </div>
   );
 };

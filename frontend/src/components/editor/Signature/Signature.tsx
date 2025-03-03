@@ -1,6 +1,7 @@
 import SignatureMobile from "@/components/Mobile/Signature/Index";
 import styles from "./Signature.module.scss";
 import { TextIcon, UploadIcon } from "@/components/Icons/Icons";
+import Image from "next/image";
 
 interface SignatureProps {
   callSignatureModal: () => void;
@@ -33,20 +34,51 @@ const Signature: React.FC<SignatureProps> = ({
         isDocumentLoaded={isDocumentLoaded}
       />
       <div className={styles.signature}>
-        <div className={styles.signature__actions}>
-          <button className={styles.signature__button} onClick={onAddText}>
-            <TextIcon />
-            <span>Добавить текст</span>
-          </button>
-          <button
-            className={styles.signature__button}
-            onClick={callSignatureModal}
-          >
-            <UploadIcon />
-            <span>Загрузить подпись</span>
-          </button>
+        <div className={styles.signature__wrap}>
+          <div className={styles.signature__actions}>
+            <button className={styles.signature__button} onClick={onAddText}>
+              <Image src="/icons/addTextIcon.svg" alt="Добавить текст" width={22} height={22} />
+              <span>Добавить текст</span>
+            </button>
+            <button
+              className={styles.signature__button}
+              onClick={callSignatureModal}
+            >
+              <Image src="/icons/downloadSealIcon.svg" alt="Загрузить подпись" width={22} height={22} />
+              <span>Загрузить подпись</span>
+            </button>
+
+          </div>
         </div>
-        <ul className={styles.signature__list}>
+
+        <div className={styles.signature__sealIcon}>
+          <Image
+            className={styles.signature__sealIcon1}
+            src="/img/addSeal.svg"
+            alt="Подпись"
+            width={80}
+            height={75}
+          />
+          <Image
+            src="/img/seal1.svg"
+            alt="Подпись"
+            width={80}
+            height={75}
+          />
+          <Image
+            src="/img/seal2.svg"
+            alt="Подпись"
+            width={80}
+            height={75}
+          />
+          <Image
+            src="/img/seal3.svg"
+            alt="Подпись"
+            width={80}
+            height={75}
+          />
+        </div>
+        {/* <ul className={styles.signature__list}>
           {isLoading ? (
             <li>Загрузка...</li>
           ) : (
@@ -69,7 +101,7 @@ const Signature: React.FC<SignatureProps> = ({
               </li>
             ))
           )}
-        </ul>
+        </ul> */}
       </div>
     </>
   );

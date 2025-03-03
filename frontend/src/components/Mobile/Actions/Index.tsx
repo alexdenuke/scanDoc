@@ -22,39 +22,42 @@ export default function ActionsMobile({
   isDocumentLoaded,
 }: ActionsProps) {
   return (
-    <div className={styles.actions__content}>
-      <button
-        className={styles.actions__button}
-        onClick={onDeleteDocument}
-        disabled={!isDocumentLoaded}
-      >
-        <TrashIcon />
-        <span>Удалить документ</span>
-      </button>
-      <button
-        className={styles.actions__button}
-        onClick={onUndo}
-        disabled={!isDocumentLoaded}
-      >
-        <CancelIcon />
-        <span>Отменить</span>
-      </button>
-      <button
-        className={styles.actions__button}
-        onClick={onRotate}
-        disabled={!isDocumentLoaded}
-      >
-        <RotatePageIcon />
-        <span>Повернуть страницу</span>
-      </button>
-      <button
-        className={styles.actions__button}
-        onClick={onApplyToAll}
-        disabled={!isDocumentLoaded}
-      >
-        <AllPagesIcon />
-        <span>Применить на все страницы</span>
-      </button>
-    </div>
+    <>
+      {/* <div className={styles.actions__content}>
+        <button
+          className={styles.actions__button}
+          onClick={onDeleteDocument}
+          disabled={!isDocumentLoaded}
+        >
+          <TrashIcon />
+          <span>Удалить документ</span>
+        </button>
+        <button
+          className={styles.actions__button}
+          onClick={onUndo}
+          disabled={!isDocumentLoaded}
+        >
+          <CancelIcon />
+          <span>Отменить</span>
+        </button>
+        <button
+          className={styles.actions__button}
+          onClick={onRotate}
+          disabled={!isDocumentLoaded}
+        >
+          <RotatePageIcon />
+          <span>Повернуть страницу</span>
+        </button>
+        <button
+          className={styles.actions__button}
+          onClick={onApplyToAll}
+          disabled={!isDocumentLoaded}
+        >
+          <AllPagesIcon />
+          <span>Применить на все страницы</span>
+        </button>
+      </div> */}
+    </>
+
   );
 }

@@ -1,9 +1,9 @@
 .field {
   background: #fff;
   margin: 0 auto;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 14px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,14 +24,18 @@
       height: 150px;
       fill: var(--primary-color);
     }
+
+
   }
+
+
 
   &__info {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 
     &Text {
       display: flex;
@@ -41,10 +45,10 @@
       gap: 10px;
 
       h4 {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 28px;
         font-weight: 700;
-        color: var(--dark);
+        color: black;
       }
 
       p {
@@ -52,7 +56,7 @@
         font-size: 18px;
         line-height: 24px;
         font-weight: 400;
-        color: var(--dark-gray);
+        color: black;
       }
     }
 
@@ -60,8 +64,10 @@
       font-size: 18px;
       line-height: 24px;
       font-weight: 400;
-      color: var(--dark-gray);
+      color: black;
     }
+
+
   }
 
   &__file {
@@ -138,6 +144,7 @@
   .field {
     width: 250px !important;
     height: 350px !important;
+
     &__infoText {
       font-size: 16px;
     }
