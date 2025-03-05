@@ -1,0 +1,26 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(165, 165, 165, 0.5); // Затемнённый фон
+    z-index: 10000;
+
+    &__box {
+        border-radius: 20px;
+        width: 860px;
+        // height: 540px;
+        background-color: #fff;
+        position: relative;
+    }
+
+    &__close {
+        position: absolute;
+        right: 10;
+        top: 10;
+    }
+}

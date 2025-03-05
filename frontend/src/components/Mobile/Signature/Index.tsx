@@ -1,6 +1,8 @@
 import { TextIcon, UploadIcon } from "@/components/Icons/Icons";
 import styles from "./Signature.module.scss";
 import Image from "next/image";
+import { useState } from "react";
+import Link from "next/link";
 
 interface SignatureProps {
   callSignatureModal: () => void;
@@ -21,10 +23,27 @@ const SignatureMobile = ({
   isLoading,
   onAddText,
 }: SignatureProps) => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className={styles.signature}>
-      <Image className={styles.signature__icon} src="/icons/adaptiveMenu.svg" alt="Подпись" width={32} height={32} />
-      <Image src="/icons/userIcon.svg" alt="Подпись" width={32} height={32} />
+      <div className={styles.menuOpenWrap}>
+        <Image onClick={() => setIsMenuOpen(!isMenuOpen)} className={styles.signature__icon} src="/icons/adaptiveMenu.svg" alt="Подпись" width={32} height={32} />
+        {isMenuOpen && (
+          <div className={styles.menuOpen}>
+
+            <div className={styles.menuOpen__list}>
+              <Image onClick={() => setIsMenuOpen(false)} className={styles.menuOpen__closeIcon} src="/icons/closeMenu.svg" alt="Подпись" width={32} height={32} />
+              <Link className={styles.menuOpen__link} href="/">Удалить документ</Link>
+              <Link href="/">Отменить</Link>
+              <Link href="/">Повернуть страницу</Link>
+              <Link href="/">На все страницы</Link>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <Image className={styles.signature__icon} src="/icons/userIcon.svg" alt="Подпись" width={32} height={32} />
       {/* <div className={styles.signature__actions}>
         <button className={styles.signature__button} onClick={onAddText}>
           <span>Добавить текст</span>
