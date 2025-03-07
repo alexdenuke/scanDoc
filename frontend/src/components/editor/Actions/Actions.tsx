@@ -79,10 +79,41 @@ const Actions: React.FC<ActionsProps> = ({
             <div className={styles.popup__payment}>
               <input type="text" placeholder="Промокод" className={styles.popup__paymentInput} />
               <button className={styles.popup__paymentActivate}>Активировать</button>
-              <button onClick={() => alert('hi11')} className={styles.popup__paymentBtn}>Оплатить</button>
+              <button onClick={() => setIsOpenPayment(true)} className={styles.popup__paymentBtn}>Оплатить</button>
             </div>
           </div>
 
+        </Popup>
+
+        <Popup isOpen={isOPenPayment} onClose={() => setIsOpenPayment(false)}>
+          <div className={styles.payment}>
+            <div className={styles.user}>
+              <div className={styles.iconWrap}>
+                <Image src={"/icons/userIcon.svg"} alt="Image" width={67} height={92} />
+                <div className={styles.userInfo}>
+                  <p className={styles.usernameTitle}>Username</p>
+                  <p className={styles.userName}>Иванов Иван</p>
+                  <p className={styles.eMailTitle}>E-mail</p>
+                  <p className={styles.eMail}>Example@mail.ru</p>
+                </div>
+              </div>
+              <p className={styles.authorization}>Авторизация через:</p>
+              <div className={styles.socials}>
+                <Image className={styles.socialIcon} src={"/icons/g.svg"} alt="Image" width={30} height={31} />
+                <Image className={styles.socialIcon} src={"/icons/faceBook.svg"} alt="Image" width={30} height={31} />
+                <Image className={styles.socialIcon} src={"/icons/vk.svg"} alt="Image" width={30} height={31} />
+              </div>
+              <p className={styles.terms}>Ты используешь бесплатную версию сервиса. Для снятия ограничений приобрети подписку. <span className={styles.textColor}>Конфиденциальность</span> и <span className={styles.textColor}>условия пользования</span> </p>
+            </div>
+            <div className={styles.pay}>
+              <p className={styles.payTitle}>Подключи безлимит за 290 ₽ в месяц</p>
+              <p className={styles.paySubtitle}>Любое количество страниц</p>
+              <p className={styles.paySubtitle}>Подпись и печать в любом месте</p>
+              <p className={styles.paySubtitle}>Сохранение в PDF и JPG</p>
+
+              <button className={styles.payBtn}>Оплатить 290 &#8381;</button>
+            </div>
+          </div>
         </Popup>
       </div>
       <div className={styles.actions}>
@@ -258,7 +289,7 @@ const Actions: React.FC<ActionsProps> = ({
               <div className={styles.payment}>
                 <div className={styles.user}>
                   <div className={styles.iconWrap}>
-                    <Image src={"/icons/userIcon.svg"} width={67} height={92} />
+                    <Image src={"/icons/userIcon.svg"} alt="Image" width={67} height={92} />
                     <div className={styles.userInfo}>
                       <p className={styles.usernameTitle}>Username</p>
                       <p className={styles.userName}>Иванов Иван</p>
@@ -268,17 +299,19 @@ const Actions: React.FC<ActionsProps> = ({
                   </div>
                   <p className={styles.authorization}>Авторизация через:</p>
                   <div className={styles.socials}>
-                    <Image className={styles.socialIcon} src={"/icons/g.svg"} width={30} height={31} />
-                    <Image className={styles.socialIcon} src={"/icons/faceBook.svg"} width={30} height={31} />
-                    <Image className={styles.socialIcon} src={"/icons/vk.svg"} width={30} height={31} />
+                    <Image className={styles.socialIcon} src={"/icons/g.svg"} alt="Image" width={30} height={31} />
+                    <Image className={styles.socialIcon} src={"/icons/faceBook.svg"} alt="Image" width={30} height={31} />
+                    <Image className={styles.socialIcon} src={"/icons/vk.svg"} alt="Image" width={30} height={31} />
                   </div>
                   <p className={styles.terms}>Ты используешь бесплатную версию сервиса. Для снятия ограничений приобрети подписку. <span className={styles.textColor}>Конфиденциальность</span> и <span className={styles.textColor}>условия пользования</span> </p>
                 </div>
-                <div className="pay">
+                <div className={styles.pay}>
                   <p className={styles.payTitle}>Подключи безлимит за 290 ₽ в месяц</p>
                   <p className={styles.paySubtitle}>Любое количество страниц</p>
                   <p className={styles.paySubtitle}>Подпись и печать в любом месте</p>
                   <p className={styles.paySubtitle}>Сохранение в PDF и JPG</p>
+
+                  <button className={styles.payBtn}>Оплатить 290 &#8381;</button>
                 </div>
               </div>
             </Popup>

@@ -365,12 +365,19 @@
 
 .payment {
   display: flex;
-  padding: 70px;
   background-color: #EEF1F6;
+  border-radius: 10px;
+
+  @media(max-width: 800px) {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
 }
 
 .user {
-  flex-basis: 60%;
+  padding: 70px;
+  // flex-basis: 60%;
+  background-color: #EEF1F6;
 }
 
 .iconWrap {
@@ -407,7 +414,7 @@
 }
 
 .socials {
-  display: flex;
+  // display: flex;
 }
 
 .socialIcon {
@@ -425,7 +432,12 @@
 
 .pay {
   flex-basis: 40%;
-  background-color: #910e0e;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+  border-radius: 20px;
+  box-shadow: -5px 0px 5px rgb(191, 191, 191);
 
 }
 
@@ -440,4 +452,16 @@
 .paySubtitle {
   margin-bottom: 15px;
   color: #757575;
+}
+
+
+.payBtn {
+  background-color: $corporate-color;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 200px;
+  margin-top: auto;
 }
