@@ -158,7 +158,7 @@ const Actions: React.FC<ActionsProps> = ({
           <span className={styles.actions__exportText}>Скачать бесплатно:</span>
           <div className={styles.actions__exportButtons}>
             <button
-              onClick={() => setIsOpen(true)}
+
               // onClick={() => alert("Кнопка нажата!")}
               className={styles.actions__downloadButton}
               // disabled={!isDocumentLoaded}
@@ -172,6 +172,53 @@ const Actions: React.FC<ActionsProps> = ({
               <Image className="actions__downloadIcon" src="/icons/download.svg" alt="logo" width={15} height={15} />
               <span className={styles.actions__downloadText}>JPG</span>
 
+            </button>
+
+
+            <button
+              className={styles.actions__downloadButton}
+              disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта!!"
+                  : "Экспортировать в JPG!"
+              }
+
+            // onClick={onExportJPG}
+            >
+              <Image className="actions__downloadIcon" src="/icons/download.svg" alt="logo" width={15} height={15} />
+              <span className={styles.actions__downloadText}>PDF</span>
+            </button>
+          </div>
+          <span className={styles.actions__exportText}>Купить:</span>
+          <div className={styles.actions__exportButtons}>
+            <button
+              onClick={() => setIsOpen(true)}
+              className={styles.actions__exportButton}
+              // disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта!!"
+                  : "Экспортировать в JPG!"
+              }
+            // onClick={onExportJPG}
+            >
+              <DownloadIcon />
+              <span>JPG</span>
+            </button>
+            <button
+              className={styles.actions__exportButton}
+              onClick={() => setIsOpen(true)}
+              // disabled={!isDocumentLoaded}
+              title={
+                !isDocumentLoaded
+                  ? "Загрузите документ для экспорта"
+                  : "Экспортировать в PDF"
+              }
+            // onClick={onExportPDF}
+            >
+              <DownloadIcon />
+              <span>PDF</span>
             </button>
             <Popup isOpen={isOpen} onClose={() => setIsOpen(false)}>
               <div className={styles.popup}>
@@ -202,56 +249,39 @@ const Actions: React.FC<ActionsProps> = ({
                 <div className={styles.popup__payment}>
                   <input type="text" placeholder="Промокод" className={styles.popup__paymentInput} />
                   <button className={styles.popup__paymentActivate}>Активировать</button>
-                  <button onClick={() => alert('hi')} className={styles.popup__paymentBtn}>Оплатить</button>
+                  <button onClick={() => setIsOpenPayment(true)} className={styles.popup__paymentBtn}>Оплатить</button>
                 </div>
               </div>
-
             </Popup>
 
-            <button
-              className={styles.actions__downloadButton}
-              disabled={!isDocumentLoaded}
-              title={
-                !isDocumentLoaded
-                  ? "Загрузите документ для экспорта!!"
-                  : "Экспортировать в JPG!"
-              }
-
-            // onClick={onExportJPG}
-            >
-              <Image className="actions__downloadIcon" src="/icons/download.svg" alt="logo" width={15} height={15} />
-              <span className={styles.actions__downloadText}>PDF</span>
-            </button>
-          </div>
-          <span className={styles.actions__exportText}>Купить:</span>
-          <div className={styles.actions__exportButtons}>
-            <button
-              className={styles.actions__exportButton}
-              disabled={!isDocumentLoaded}
-              onClick={() => alert("Кнопка нажата!")}
-              title={
-                !isDocumentLoaded
-                  ? "Загрузите документ для экспорта!!"
-                  : "Экспортировать в JPG!"
-              }
-            // onClick={onExportJPG}
-            >
-              <DownloadIcon />
-              <span>JPG</span>
-            </button>
-            <button
-              className={styles.actions__exportButton}
-              disabled={!isDocumentLoaded}
-              title={
-                !isDocumentLoaded
-                  ? "Загрузите документ для экспорта"
-                  : "Экспортировать в PDF"
-              }
-              onClick={onExportPDF}
-            >
-              <DownloadIcon />
-              <span>PDF</span>
-            </button>
+            <Popup isOpen={isOPenPayment} onClose={() => setIsOpenPayment(false)}>
+              <div className={styles.payment}>
+                <div className={styles.user}>
+                  <div className={styles.iconWrap}>
+                    <Image src={"/icons/userIcon.svg"} width={67} height={92} />
+                    <div className={styles.userInfo}>
+                      <p className={styles.usernameTitle}>Username</p>
+                      <p className={styles.userName}>Иванов Иван</p>
+                      <p className={styles.eMailTitle}>E-mail</p>
+                      <p className={styles.eMail}>Example@mail.ru</p>
+                    </div>
+                  </div>
+                  <p className={styles.authorization}>Авторизация через:</p>
+                  <div className={styles.socials}>
+                    <Image className={styles.socialIcon} src={"/icons/g.svg"} width={30} height={31} />
+                    <Image className={styles.socialIcon} src={"/icons/faceBook.svg"} width={30} height={31} />
+                    <Image className={styles.socialIcon} src={"/icons/vk.svg"} width={30} height={31} />
+                  </div>
+                  <p className={styles.terms}>Ты используешь бесплатную версию сервиса. Для снятия ограничений приобрети подписку. <span className={styles.textColor}>Конфиденциальность</span> и <span className={styles.textColor}>условия пользования</span> </p>
+                </div>
+                <div className="pay">
+                  <p className={styles.payTitle}>Подключи безлимит за 290 ₽ в месяц</p>
+                  <p className={styles.paySubtitle}>Любое количество страниц</p>
+                  <p className={styles.paySubtitle}>Подпись и печать в любом месте</p>
+                  <p className={styles.paySubtitle}>Сохранение в PDF и JPG</p>
+                </div>
+              </div>
+            </Popup>
           </div>
         </div>
       </div>

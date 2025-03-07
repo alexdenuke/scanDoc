@@ -360,3 +360,84 @@
     }
   }
 }
+
+
+
+.payment {
+  display: flex;
+  padding: 70px;
+  background-color: #EEF1F6;
+}
+
+.user {
+  flex-basis: 60%;
+}
+
+.iconWrap {
+  display: flex;
+}
+
+.userInfo {
+  margin-left: 70px;
+}
+
+.usernameTitle {
+  margin-bottom: 5px;
+  font-family: var(--font-gropled);
+}
+
+.userName {
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.eMailTitle {
+  margin-bottom: 5px;
+  font-family: var(--font-gropled);
+}
+
+.eMail {
+  color: black;
+  font-weight: bold;
+}
+
+.authorization {
+  margin-top: 110px;
+}
+
+.socials {
+  display: flex;
+}
+
+.socialIcon {
+  margin-right: 25px;
+}
+
+.terms {
+  margin-top: 60px;
+  color: #757575;
+}
+
+.textColor {
+  color: $corporate-color;
+}
+
+.pay {
+  flex-basis: 40%;
+  background-color: #910e0e;
+
+}
+
+.payTitle {
+  font-size: 20px;
+  font-family: var(--font-gropled);
+  color: black;
+  margin-bottom: 20px;
+
+}
+
+.paySubtitle {
+  margin-bottom: 15px;
+  color: #757575;
+}
